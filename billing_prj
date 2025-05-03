@@ -1,0 +1,39 @@
+#billing
+macbookpro_cost=150000
+discount=0
+sgst=8/100
+cgst=10/100
+total=0
+print("-----we are selling------")
+print("----cost 150000-----")
+required_macs=int(input("enter how many macs you want"))
+if required_macs>3 and required_macs<7:
+ discount=7/100
+elif required_macs>6 and required_macs<11:
+ discount=12/100
+elif required_macs>10 and required_macs<16:
+ discount=18/100
+elif required_macs > 15 and required_macs < 21:
+    discount = 24 / 100
+else:
+    discount = 0
+
+macbookpro_cost = 150000
+macs_total = required_macs * macbookpro_cost
+
+# Correctly calculate discount as an amount
+discount_amount = macs_total * discount
+price_after_discount = macs_total - discount_amount
+
+# Calculate taxes 
+macs_cgst = macs_total * 10 / 100
+macs_sgst = macs_total * 8 / 100
+# Total cost
+totalcost = price_after_discount + macs_cgst + macs_sgst
+#output
+print("		---macbookpro_cost:",150000)
+print("		---macbookpro_discount:",discount_amount)
+print("		---sgst 8/100----:",macs_sgst)
+print("		---cgst 10/100---:",macs_cgst)
+print("		totalcost  :",totalcost)
+print(	"----thankingyou-----")
